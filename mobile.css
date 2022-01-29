@@ -1,0 +1,30 @@
+@media only screen and (max-width: 975px){
+
+    #displayInfo {
+        background-color: rgba(0,0,0,0.1);
+        width:100%;
+        position: sticky;
+        top: 0;
+        margin-bottom: .2em;
+        height: fit-content;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #displayInfo h2 {
+        display: none;
+    }
+
+
+    #upgradeInfo {
+        margin-top: 1em;
+        background-color: rgba(0,0,0,0.1);
+        width:100%;
+        position: static;
+        top: 0;
+        margin-bottom: .2em;
+        height: fit-content;
+    }
+}
