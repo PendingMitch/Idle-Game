@@ -30,7 +30,7 @@ function spendCost(cost) {
 
 function andGate(name, price) {
     if (queryAfford(price)) {
-        items["wires"].setClickAmount(items["wires"].getClickAmount() + 2)
+        items["wires"].setClickAmount(items["wires"].getClickAmount() + 1)
         spendCost(price)
         increaseAmountBought(name)
     } else {
@@ -40,7 +40,7 @@ function andGate(name, price) {
 
 function orGate(name, price) {
     if (queryAfford(price)) {
-        items["modules"].setClickAmount(items["modules"].getClickAmount() + 2)
+        items["modules"].setClickAmount(items["modules"].getClickAmount() + 1)
         spendCost(price)
         increaseAmountBought(name)
     } else {
