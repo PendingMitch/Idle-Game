@@ -26,7 +26,10 @@ function resetData() {
 
 
 let upgrades_info = [
-    {"name": "AND Gate", "price": [{"type":"wires", "price": 50}, {"type": "modules", "price": 1}], "description": "Get another wire to be able to send your data onto.", "function": "andGate"}
+    {"name": "AND Gate", "price": [{"type":"wires", "price": 50}, {"type": "modules", "price": 5}], "description": "Every time you click, you'll get another wire.", "function": "andGate"},
+    {"name": "WHILE Loop", "price": [{"type":"wires", "price": 200}, {"type": "modules", "price": 50}], "description": "Get another wire every 5 seconds.", "function": "autoclickerBought"},
+    {"name": "OR Gate", "price": [{"type":"wires", "price": 500}, {"type": "modules", "price": 100}], "description": "Every time you click, you'll get another module.", "function": "orGate"},
+    {"name": "FOR Loop", "price": [{"type":"wires", "price": 750}, {"type": "modules", "price": 250}], "description": "Get another wire and another module every 10 seconds.", "function": "autoclickerBought"}
 ]
 
 
@@ -35,4 +38,15 @@ for(let i = 0; i < upgrades_info.length; i++) {
     new Upgrade(upgrades_info[i]["name"], upgrades_info[i]["price"], upgrades_info[i]["description"], upgrades_info[i]["function"])
 }
 
+let autoclickers_info = [
+    {"name": "WHILE Loop", "function": autoclickWhileLoop, "timeout": 5},
+    {"name": "FOR Loop", "function": autoclickForLoop, "timeout": 10}
+] 
+
+for(let i = 0; i < autoclickers_info.length; i++) {
+    new autoClicker(autoclickers_info[i]["name"], autoclickers_info[i]["function"], autoclickers_info[i]["timeout"])
+}
+
 console.log('Setup complete')
+
+

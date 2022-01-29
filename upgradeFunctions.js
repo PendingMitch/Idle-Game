@@ -8,6 +8,7 @@ function displayBroke() {
 
 function increaseAmountBought(name) {
     upgrades[name].bought()
+    console.log("Bought a new " + name)
 }
 
 function queryAfford(price) {
@@ -31,7 +32,25 @@ function andGate(name, price) {
     if (queryAfford(price)) {
         items["wires"].setClickAmount(items["wires"].getClickAmount() + 2)
         spendCost(price)
-        console.log("Bought a new " + name)
+        increaseAmountBought(name)
+    } else {
+        displayBroke()
+    }
+}
+
+function orGate(name, price) {
+    if (queryAfford(price)) {
+        items["modules"].setClickAmount(items["modules"].getClickAmount() + 2)
+        spendCost(price)
+        increaseAmountBought(name)
+    } else {
+        displayBroke()
+    }
+}
+
+function autoclickerBought(name, price) {
+    if (queryAfford(price)) {
+        spendCost(price)
         increaseAmountBought(name)
     } else {
         displayBroke()

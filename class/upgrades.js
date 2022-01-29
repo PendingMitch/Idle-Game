@@ -91,16 +91,23 @@ class Upgrade {
 
     getAmount() {
         let amount = 0
-        if (localStorage.getItem(this.name+'amount') && localStorage.getItem(this.name+'amount') != undefined ) {
+        
+        if (localStorage.getItem(this.name+'amount') && localStorage.getItem(this.name+'amount') != undefined) {
             amount = localStorage.getItem(this.name+'amount')
         } else {
-            this.setAmount(this.amount)
+            this.setAmount(amount)
         }
         return Number(amount)
     }
 
     setAmount(number) {
-        localStorage.setItem(this.name+'amount', number)
+        number = Number(number)
+        if (number != NaN) {
+            localStorage.setItem(this.name+'amount', number)
+            if(autoClickers[this.name]) {
+                autoClickers[this.name].getAmount()
+            }
+        }
     }
 
     reset() {
