@@ -64,7 +64,7 @@ body {
 
 #displayInfo {
     background-color: rgba(0,0,0,0.1);
-    width:200px;
+    width:250px;
     height: 100%;
     position: absolute;
     left: 0;
@@ -91,7 +91,7 @@ body {
 
 #upgradeInfo {
     background-color: rgba(0,0,0,0.1);
-    width:200px;
+    width:250px;
     height: 100%;
     position: absolute;
     right: 0;
