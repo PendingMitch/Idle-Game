@@ -85,11 +85,10 @@ class Upgrade {
         
 
         this.createFunctionString(action)
-
-        this.amount = 0 
+        this.getAmount()
 
         this.createDisplay()
-
+        this.updateDisplay()
         upgrades[name] = this
     }
 
@@ -106,7 +105,7 @@ class Upgrade {
         let desc = document.createElement('p')
         desc.innerHTML = this.description
         let amount = document.createElement('p')
-        amount.innerHTML = 'Amount Owned: ' + this.amount
+        amount.innerHTML = 'Amount Owned: ' + this.getAmount()
 
         let price = document.createElement('p')
         let price_string = "Price: "
@@ -159,17 +158,30 @@ class Upgrade {
         }
         this.elements.price.innerHTML = price_string
 
-        this.elements.amountBought.innerHTML = 'Amount Owned: ' + this.amount
+        this.elements.amountBought.innerHTML = 'Amount Owned: ' + this.getAmount()
     }
 
     bought() {
-        this.amount = this.amount + 1
+        this.setAmount(this.getAmount() + 1)
         this.updateDisplay()
     }
 
-    reset() {
-        this.amount = 0
+    getAmount() {
+        let amount = 0
+        if (localStorage.getItem(this.name+'amount') && localStorage.getItem(this.name+'amount') != undefined ) {
+            amount = localStorage.getItem(this.name+'amount')
+        } else {
+            this.setAmount(this.amount)
+        }
+        return Number(amount)
+    }
 
+    setAmount(number) {
+        localStorage.setItem(this.name+'amount', number)
+    }
+
+    reset() {
+        this.setAmount(0)
         this.updateDisplay()
     }
 }
