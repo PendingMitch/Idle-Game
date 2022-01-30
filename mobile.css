@@ -41,4 +41,17 @@
 
         overflow-y: initial;
     }
+
+
+    #brokeInfo {
+        width:50%;
+        height: 20%;
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    
 }
