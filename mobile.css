@@ -11,6 +11,9 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+
+        border-right: 0px none;
+        border-bottom: solid 1px black;
     }
 
     #displayInfo h2 {
@@ -40,6 +43,8 @@
         min-height: fit-content;
 
         overflow-y: initial;
+        border-top: solid 1px black;
+        border-left: 0px none;
     }
 
 
