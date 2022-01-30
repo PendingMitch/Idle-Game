@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>PendingMitch's Idle Game</title>
-
+    <link rel="shortcut icon" href="profile pic.png" type="image/x-icon">
     <link href="style.css" rel="stylesheet" type="text/css"/>
     <link href="mobile.css" rel="stylesheet" type="text/css"/>
 
@@ -18,13 +18,23 @@
     <div id="mainMenu">
         <button class="btn" onclick="wireClick()">Get Wires</button>
         <button class="btn" onclick="modulesClick()">Get Modules</button>
-        <button class="btn btn-danger" onclick="resetData()">Reset Data</button>
+        <button class="btn btn-danger" onclick="openResetDataPopUp()">Reset Data</button>
     </div>
     <div id="upgradeInfo">
         <h2>Upgrades</h2>
     </div>
     <div id="brokeInfo">
         <p>You don't have enough items</p>
+    </div>
+
+
+    <div id="resetDataPopUp">
+        <p id="x" onclick="closeResetDataPopUp()">X</p>
+        <h3>Are you sure you want to reset data?</h3>
+        <div>
+            <button onclick="resetData(); closeResetDataPopUp()">Yes</button>
+            <button onclick="closeResetDataPopUp()">No</button>
+        </div>
     </div>
 
 

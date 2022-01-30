@@ -7,7 +7,8 @@ let files = [
     "handlers/autoclickFuntions.js",
     "handlers/autoclickerhandling.js",
     "datamanage.js",
-    "script.js"
+    "script.js",
+    "navigation.js"
 ]
 
 
