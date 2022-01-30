@@ -17,15 +17,28 @@
         display: none;
     }
 
+    #displayInfo.scrolled {
+        background-color: rgba(0,0,0,0.5);
+        transition: all 0.5s;
+    }
+
+    #displayInfo.not_scrolled {
+        background-color: rgba(0,0,0,0.1);
+        transition: all 0.5s;
+    }
+
+
+
 
     #upgradeInfo {
         margin-top: 1em;
         background-color: rgba(0,0,0,0.1);
         width:100%;
         position: static;
-        top: 0;
         margin-bottom: .2em;
         height: fit-content;
-        min-height: fix-content;
+        min-height: fit-content;
+
+        overflow-y: initial;
     }
 }
