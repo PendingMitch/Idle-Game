@@ -1,6 +1,6 @@
 let upgrades = []
 class Upgrade {
-    constructor(name, price, description, action) {
+    constructor(name, price, description, action, displayAt) {
         this.plain_name = name
         this.name = localStorageUpgradePrefix + name
         this.price = price
@@ -9,9 +9,9 @@ class Upgrade {
 
         this.createFunctionString(action)
         this.getAmount()
-
-        this.createDisplay()
-        this.updateDisplay()
+        this.displayAt = displayAt
+        this.display()
+        
         upgrades[name] = this
     }
 
@@ -19,7 +19,16 @@ class Upgrade {
         this.action = action + '("' + this.plain_name + '", ' + JSON.stringify(this.price) + ')'
     }
 
+    display() {
+        if (this.isDisplayed() == true && this.alreadyDisplayed != true) {
+            this.createDisplay()
+            this.updateDisplay()
+        }
+    }
+
     createDisplay() {
+        this.isDisplayed(true)
+        upgradeLog('Added item to upgrade list: ' + this.plain_name)
         let div = document.createElement('div')
         let heading = document.createElement('h3')
         name = this.plain_name
@@ -59,11 +68,19 @@ class Upgrade {
         div.appendChild(button)
         displayInfo.appendChild(div)
 
-
         this.elements = {}
+        this.elements.main = div
         this.elements.price = price
         this.elements.button = button
         this.elements.amountBought = amount
+    }
+
+    removeDisplay() {
+        if (this.elements && this.elements.main) {
+            this.elements.main.remove()
+        }
+        this.elements = {}
+        
     }
 
     updateDisplay() {
@@ -82,6 +99,34 @@ class Upgrade {
         this.elements.price.innerHTML = price_string
 
         this.elements.amountBought.innerHTML = 'Amount Owned: ' + this.getAmount()
+    }
+
+    isDisplayed(bool) {
+        bool = bool ?? "NotABool"
+        if (bool != "NotABool") {
+            localStorage.setItem(localStorageUpgradePrefix + '_isDisplayed_' + this.plain_name, bool)
+            if (bool == false) {
+                this.removeDisplay()
+            }
+            this.alreadyDisplayed = bool == true
+        } else {
+            if (this.displayAt == 0) {
+                localStorage.setItem(localStorageUpgradePrefix + '_isDisplayed_' + this.plain_name, true)
+            } else {
+                bool = true
+                for (let i = 0; i < this.displayAt.length; i++) {
+                    let item = this.displayAt[i]
+                    if (items[item.type].value() < item.price) {
+                        bool = false
+                    }
+                }
+                localStorage.setItem(localStorageUpgradePrefix + '_isDisplayed_' + this.plain_name, bool)
+            }
+        }
+
+        let boolean_returned = localStorage.getItem(localStorageUpgradePrefix + '_isDisplayed_' + this.plain_name) == 'true'
+        return boolean_returned
+        
     }
 
     bought() {
@@ -112,6 +157,7 @@ class Upgrade {
 
     reset() {
         this.setAmount(0)
-        this.updateDisplay()
+        this.isDisplayed(false)
+        this.display()
     }
 }

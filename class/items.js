@@ -27,6 +27,12 @@ class Item {
     add(number) {
         localStorage.setItem(this.name, this.value() + number)
         this.changeElementNum()
+
+
+        let upgrade_keys = Object.keys(upgrades)
+        for (let i = 0; i < upgrade_keys.length; i++) {
+            upgrades[upgrade_keys[i]].display()
+        }
     }
 
     reset() {

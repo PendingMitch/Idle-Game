@@ -28,31 +28,42 @@ function spendCost(cost) {
     }
 } 
 
-function andGate(name, price) {
-    if (queryAfford(price)) {
-        items["wires"].setClickAmount(items["wires"].getClickAmount() + 1)
-        spendCost(price)
-        increaseAmountBought(name)
-    } else {
-        displayBroke()
-    }
-}
-
-function orGate(name, price) {
-    if (queryAfford(price)) {
-        items["modules"].setClickAmount(items["modules"].getClickAmount() + 1)
-        spendCost(price)
-        increaseAmountBought(name)
-    } else {
-        displayBroke()
-    }
-}
-
 function autoclickerBought(name, price) {
     if (queryAfford(price)) {
         spendCost(price)
         increaseAmountBought(name)
     } else {
         displayBroke()
+    }
+}
+
+function upgradeBuying(name, price) {
+    if (queryAfford(price)) {
+        spendCost(price)
+        increaseAmountBought(name)
+        return true
+    }
+    displayBroke()
+    return false
+}
+
+///////////////////////////////////////////////////////////////////////////
+
+
+function andGate(name, price) {
+    if (upgradeBuying(name, price)) {
+        items["wires"].setClickAmount(items["wires"].getClickAmount() + 1)
+    }
+}
+
+function orGate(name, price) {
+    if (upgradeBuying(name, price)) {
+        items["modules"].setClickAmount(items["modules"].getClickAmount() + 1)
+    }
+}
+
+function notGate(name, price) {
+    if (upgradeBuying(name, price)) {
+        items["modules"].setClickAmount(items["modules"].getClickAmount() + 1)
     }
 }
