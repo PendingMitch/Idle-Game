@@ -20,9 +20,11 @@ function handleAutoclickers() {
     for (let i = 0; i < autoclickKeys.length; i++) {
         let index = autoclickKeys[i]
         if (autoClickers[index].curr_timeout <= 0) {
-            for (let j = 1; j <= autoClickers[index].getAmount(); j++) {
+            let amount = autoClickers[index].getAmount()
+            for (let j = 1; j <= amount; j++) {
                 autoClickers[index].action()
             }
+            autoClickLog(autoClickers[index].plain_name + ' has been ran ' + amount + ' times.')
         }
 
         autoClickers[index].passTime()

@@ -19,7 +19,7 @@ function resetData() {
         upgrades[index].reset()
     }
 
-    console.log('Reset Data')
+    dataLog('Reset Data')
 }
 
 
@@ -47,6 +47,6 @@ for(let i = 0; i < autoclickers_info.length; i++) {
     new autoClicker(autoclickers_info[i]["name"], autoclickers_info[i]["function"], autoclickers_info[i]["timeout"])
 }
 
-console.log('Setup complete')
+dataLog('Setup complete')
 
 

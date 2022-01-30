@@ -1,6 +1,6 @@
 function displayBroke() {
     let brokeInfo = document.getElementById('brokeInfo')
-    console.log('You don\'t have enough items')
+    upgradeLog('You don\'t have enough items')
     brokeInfo.style.display = "flex"
 
     setTimeout(() => brokeInfo.style.display = "none", 1000)
@@ -8,7 +8,7 @@ function displayBroke() {
 
 function increaseAmountBought(name) {
     upgrades[name].bought()
-    console.log("Bought a new " + name)
+    upgradeLog("Bought a new " + name)
 }
 
 function queryAfford(price) {
