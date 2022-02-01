@@ -7,6 +7,7 @@
 .clickerButton, .resetButton {
     min-width: 485px;
     width: 75%;
+    max-width: 875px;
 }
 
 .clickerButton {
