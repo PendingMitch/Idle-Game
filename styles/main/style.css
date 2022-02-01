@@ -7,18 +7,25 @@
     --danger: rgba(255,75,75,1.0);
 }
 
-body, html {
+html {
     width:100%;
+}
+
+body, html {
     height: 100%;
+
     padding: 0;
     margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 body {
     background-color: var(--background);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    
+    width: calc(100% - 250px - 250px);
 }
 
 * {
@@ -26,39 +33,3 @@ body {
     color: white;
 }
 
-.btn {
-    border-style: sold;
-    border-radius: 1em;
-    background-color: var(--btn-background);
-    color: var(--btn-color);
-    border-color: var(--btn-color);
-    padding: .5em;
-    min-width: 10em;
-    height: 2em;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    margin: .5em 1em .5em 1em;
-}
-
-.btn:hover {
-    cursor: pointer;
-    background-color: var(--btn-color);
-    color: var(--btn-background);
-    border-color: var(--btn-background);
-}
-
-#mainMenu {
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.btn-danger {
-    background-color: red;
-}

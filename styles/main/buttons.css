@@ -1,0 +1,60 @@
+.btn {
+    min-width: 10em;
+    height: 2em;
+    min-height: 2em;
+}
+
+.clickerButton, .resetButton {
+    min-width: 485px;
+    width: 75%;
+}
+
+.clickerButton {
+    min-height: 150px;
+    height: 20%;
+}
+
+#mainMenu {
+    width: 100%;
+    display: flex;
+
+    height: 400px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.btn {
+    border-style: sold;
+    border-radius: 1em;
+    background-color: var(--btn-background);
+    color: var(--btn-color);
+    border-color: var(--btn-color);
+    padding: .5em;
+    min-width: 10em;
+    height: 2em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: .5em 1em .5em 1em;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: var(--btn-color);
+    color: var(--btn-background);
+    border-color: var(--btn-background);
+}
+
+.btn-danger {
+    background-color: red;
+}
+
+.btn-danger:hover {
+    color: red;
+    border-color: red;
+}

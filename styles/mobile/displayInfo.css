@@ -1,5 +1,4 @@
 @media only screen and (max-width: 975px){
-
     #displayInfo {
         background-color: rgba(0,0,0,0.1);
         width:100%;
@@ -29,36 +28,4 @@
         background-color: rgba(0,0,0,0.1);
         transition: all 0.5s;
     }
-
-
-
-
-    #upgradeInfo {
-        margin-top: 1em;
-        background-color: rgba(0,0,0,0.1);
-        width:100%;
-        position: static;
-        margin-bottom: .2em;
-        height: fit-content;
-        min-height: fit-content;
-
-        overflow-y: initial;
-        border-top: solid 1px black;
-        border-left: 0px none;
-    }
-
-
-    #brokeInfo {
-        width:50%;
-        min-width: 100px;
-        height: 20%;
-        min-height: 50px;
-        position: fixed;
-        right: 0;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-    }
-    
 }

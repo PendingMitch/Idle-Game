@@ -1,9 +1,15 @@
 let cssFiles = [
     "main/style.css",
+    "main/buttons.css",
     "main/displayInfo.css",
     "main/resetData.css",
     "main/upgradeInfo.css",
-    "mobile/mobile.css",
+
+    
+    "mobile/brokeInfo.css",
+    "mobile/displayInfo.css",
+    "mobile/upgradeInfo.css",
+    "mobile/buttons.css",
 ]
 
 function loadStyle(file) {

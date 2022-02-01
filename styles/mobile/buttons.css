@@ -1,0 +1,15 @@
+@media only screen and (max-width: 975px) {
+    body {
+        width: 100%;
+    }
+
+    #mainMenu {
+        flex-direction: row;
+    }
+
+    .btn, .clickerButton {
+        min-width: 10em;
+        height: 2em;
+        min-height: 2em;
+    }
+}
