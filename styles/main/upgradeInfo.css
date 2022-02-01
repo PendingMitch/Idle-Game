@@ -1,0 +1,45 @@
+#upgradeInfo {
+    background-color: rgba(0,0,0,0.1);
+    width:250px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+
+    overflow-y: scroll;
+    border-left: solid 1px black;
+}
+
+#upgradeInfo div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#upgradeInfo h2 {
+    margin: .5em;
+}
+
+#upgradeInfo h3 {
+    margin: .25em;
+}
+#upgradeInfo p {
+    margin: .25em;
+}
+
+#upgradeInfo *{
+    text-align: center;
+}
+
+#brokeInfo {
+    background-color: var(--danger);
+    width:250px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

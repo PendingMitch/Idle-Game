@@ -1,0 +1,16 @@
+#loadingScreen {
+    background-color: var(--background);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+#loadingScreen.finished-view {
+    opacity: 0;
+    transition: all 1s;
+}
+
+#loadingScreen.finished {
+    display: none;
+}
