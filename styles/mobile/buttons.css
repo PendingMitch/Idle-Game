@@ -5,6 +5,7 @@
 
     #mainMenu {
         flex-direction: row;
+        min-height: 366px;
     }
 
     .btn, .clickerButton {
